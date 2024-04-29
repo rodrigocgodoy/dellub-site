@@ -6,11 +6,11 @@ const config: Config = {
     "./src/**/*.{tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      title: ['var(--font-raleway)', 'Arial', 'sans-serif'],
+      text: ['var(--font-inter)', 'Arial', 'sans-serif'],
+    },
     extend: {
-      fontFamily: {
-        title: ['var(--font-raleway)', 'Arial', 'sans-serif'],
-        text: ['var(--font-inter)', 'Arial', 'sans-serif'],
-      },
       colors: {
         brand: {
           primary: '#6609B0',

@@ -34,4 +34,10 @@ export default {
       button: "Start Project",
     },
   },
+  agency: {
+    title: "Creative digital product agency focused on scaling brands through unparalleled web experience.",
+    paragraph1: "Our team of experienced designers and developers has only one thing in mind; working on your ideas to bring a smile on the faces of your users around the world.",
+    paragraph2: "From good visual design to highly optimized front-end development. We're here to refine, design and build your brand and digital product.",
+    paragraph3: "We combine the creative talent to create visually captivating interfaces with the technical expertise to develop products that add real value to businesses and user experiences. We are ready to transform your ideas into powerful and impactful solutions that drive the success of your project.",
+  },
 } as const;
