@@ -24,4 +24,14 @@ export default {
       contact: "Contact",
     },
   },
+  home: {
+    hero: {
+      title: "Design and development of digital products_",
+      content: {
+        text: "An interactive and collaborative studio",
+        paragraph: "We build exceptional projects for your business through strategy, creativity and technological innovation",
+      },
+      button: "Start Project",
+    },
+  },
 } as const;

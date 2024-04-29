@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Raleway } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-import "./globals.css";
 import { Provider } from "./provider";
+import { cn } from "@/utils/cn";
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: 'swap',
+  variable: '--font-inter',
+});
+const raleway = Raleway({
+  subsets: ["latin"],
+  display: 'swap',
+  variable: '--font-raleway',
+});
 
 export async function generateStaticParams() {
   return ['pt-BR', 'en'];
@@ -36,8 +47,8 @@ export default function RootLayout({
   params: { locale: string };
 }>) {
   return (
-    <html lang={locale}>
-      <body className={inter.className}>
+    <html lang={locale} className="scroll-smooth">
+      <body className={cn(inter.variable, raleway.variable, "antialiased")}>
         <Provider locale={locale}>
           {children}
           <Analytics />

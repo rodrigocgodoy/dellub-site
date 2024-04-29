@@ -24,4 +24,14 @@ export default {
       contact: 'Contato',
     },
   },
+  home: {
+    hero: {
+      title: 'Design e desenvolvimento de produtos digitais_',
+      content: {
+        text: 'Um estúdio interativo e colaborativo',
+        paragraph: 'Construímos projetos excepcionais para seu negócio através de estratégia, criatividade e inovação tecnológica',
+      },
+      button: 'Iniciar Projeto',
+    },
+  },
 } as const;
