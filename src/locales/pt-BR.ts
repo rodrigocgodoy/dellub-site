@@ -1,7 +1,11 @@
-console.log('logou pt-BR')
-
 export default {
-  'hello': 'Olá',
-  'hello.world': 'Olá mundo!',
-  'welcome': 'Olá {name}!'
-} as const
+  header: {
+    nav: {
+      home: 'Home',
+      solutions: 'Soluções',
+      about: 'Sobre nós',
+      blog: 'Blog',
+      contact: 'Contato',
+    },
+  },
+} as const;

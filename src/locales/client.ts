@@ -9,12 +9,12 @@ export const {
   defineLocale,
   useCurrentLocale,
 } = createI18nClient({
-  en: async () => {
-    await new Promise(resolve => setTimeout(resolve, 100));
-    return import('./en');
-  },
   'pt-BR': async () => {
     await new Promise(resolve => setTimeout(resolve, 100));
     return import('./pt-BR');
+  },
+  en: async () => {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    return import('./en');
   },
 });

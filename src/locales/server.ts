@@ -6,6 +6,6 @@ export const {
   getStaticParams,
   getCurrentLocale,
 } = createI18nServer({
-  en: () => import('./en'),
   'pt-BR': () => import('./pt-BR'),
+  en: () => import('./en'),
 });
