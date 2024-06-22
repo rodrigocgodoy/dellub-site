@@ -1,6 +1,6 @@
 import { getI18n } from "@/locales/server";
 import Image from "next/image";
-import { Button } from "./button";
+import { Button } from "../components/button";
 
 export async function Hero() {
   const t = await getI18n();

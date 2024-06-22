@@ -1,16 +1,16 @@
-import { setStaticParamsLocale } from "next-international/server";
+import { setStaticParamsLocale } from 'next-international/server'
 
-import { Header } from "@/components/header";
-import { Hero } from "@/components/hero";
-import { Footer } from "@/components/footer";
-import { Agency } from "@/components/agency";
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { Agency } from '@/sections/agency'
+import { Hero } from '@/sections/hero'
 
 export default async function Page({
   params: { locale },
 }: {
-  params: { locale: string };
+  params: { locale: string }
 }) {
-  setStaticParamsLocale(locale);
+  setStaticParamsLocale(locale)
 
   return (
     <>
@@ -21,5 +21,5 @@ export default async function Page({
       </main>
       <Footer />
     </>
-  );
+  )
 }
