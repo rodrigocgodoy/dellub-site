@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Raleway } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { GoogleTagManager } from '@next/third-parties/google'
 
 import { Provider } from "./provider";
 import { cn } from "@/utils/cn";
@@ -48,6 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={locale} className="scroll-smooth">
+      <GoogleTagManager gtmId="GTM-NDMKWNP4" />
       <body className={cn(inter.variable, raleway.variable, "antialiased")}>
         <Provider locale={locale}>
           {children}
