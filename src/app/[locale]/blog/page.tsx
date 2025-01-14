@@ -1,30 +1,32 @@
-import React from "react";
-import ReactMarkdown from "react-markdown";
-import axios from "axios";
+import React from 'react'
+import ReactMarkdown from 'react-markdown'
+import axios from 'axios'
 
-import { Switch } from "@/components/switch";
+import { Switch } from '@/components/switch'
 
 interface Blog {
-  id: string;
+  id: string
   attributes: {
-    title: string;
-    body: string;
-    locale: string;
-    date: string;
-  };
+    title: string
+    body: string
+    locale: string
+    date: string
+  }
 }
 
-export default async function Page({
-  params: { locale },
-}: {
-  params: { locale: string };
+export default async function Page(props: {
+  params: Promise<{ locale: string }>
 }) {
+  const params = await props.params
+
+  const { locale } = params
+
   const result = await axios.get(`http://localhost:1337/api/blogs?locale=${locale}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+  })
 
   return (
     <div>
@@ -39,5 +41,5 @@ export default async function Page({
         </div>
       ))}
     </div>
-  );
+  )
 }

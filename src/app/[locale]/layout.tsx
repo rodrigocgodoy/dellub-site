@@ -49,8 +49,7 @@ export async function generateMetadata({ params: { locale } }: Omit<Props, 'chil
   }
 }
 
-export default async function RootLayout({ children, params }: Props) {
-  const { locale } = await params
+export default async function RootLayout({ children, params: { locale } }: Props) {
   // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale as 'en' | 'pt')) {
     notFound()
