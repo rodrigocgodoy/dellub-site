@@ -1,38 +1,23 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next'
+import { host } from '@/config'
+import { type Locale, getPathname, routing } from '@/i18n/routing'
 
-const url = 'https://dellub.com'
- 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: `${url}`,
-      lastModified: new Date(),
-      alternates: {
-        languages: {
-          'pt-BR': `${url}/`,
-          'en': `${url}/en`,
-        },
-      },
+  return [getEntry('/'), getEntry('/pathnames')]
+}
+
+type Href = Parameters<typeof getPathname>[0]['href']
+
+function getEntry(href: Href) {
+  return {
+    url: getUrl(href, routing.defaultLocale),
+    alternates: {
+      languages: Object.fromEntries(routing.locales.map((locale) => [locale, getUrl(href, locale)])),
     },
-    {
-      url: `${url}/about`,
-      lastModified: new Date(),
-      alternates: {
-        languages: {
-          'pt-BR': `${url}/about`,
-          'en': `${url}/en/about`,
-        },
-      },
-    },
-    {
-      url: `${url}/blog`,
-      lastModified: new Date(),
-      alternates: {
-        languages: {
-          'pt-BR': `${url}/blog`,
-          'en': `${url}/en/blog`,
-        },
-      },
-    },
-  ];
-};
+  }
+}
+
+function getUrl(href: Href, locale: Locale) {
+  const pathname = getPathname({ locale, href })
+  return host + pathname
+}

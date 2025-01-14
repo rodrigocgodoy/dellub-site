@@ -3,32 +3,38 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/third-parties": "^15.0.3",
+    "@next/third-parties": "15.1.4",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "axios": "^1.6.8",
     "clsx": "^2.1.1",
-    "next": "14.2.3",
+    "next": "15.1.4",
     "next-international": "^1.2.4",
-    "react": "^18",
-    "react-dom": "^18",
+    "next-intl": "^3.26.3",
+    "react": "19.0.0-rc.1",
+    "react-dom": "19.0.0-rc.1",
     "react-markdown": "^9.0.1",
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "19.0.6",
+    "@types/react-dom": "19.0.3",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3",
+    "eslint-config-next": "15.1.4",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "resolutions": {
+    "@types/react": "19.0.6",
+    "@types/react-dom": "19.0.3"
   }
 }

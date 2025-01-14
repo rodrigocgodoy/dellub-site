@@ -1,10 +1,8 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   darkMode: 'media',
-  content: [
-    "./src/**/*.{tsx,mdx}",
-  ],
+  content: ['./src/**/*.{tsx,mdx}'],
   theme: {
     fontFamily: {
       title: ['var(--font-raleway)', 'Arial', 'sans-serif'],
@@ -22,5 +20,5 @@ const config: Config = {
     },
   },
   plugins: [],
-};
-export default config;
+}
+export default config
